@@ -9,11 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // for CGAffineTranform to use
     var angle = CGFloat.pi/180
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupView()
+//        setupGradientBorder()
         view.backgroundColor = .systemGray5
 //        setupOriginal()
        
@@ -63,6 +64,7 @@ class ViewController: UIViewController {
     
     private func setupOriginal() -> UIView {
         let size = UIScreen.main.bounds.size
+        // background rectangle view
         var rect = UIView(frame: CGRect(x: 0,
                                         y: 0,
                                         width: 350,
@@ -73,7 +75,7 @@ class ViewController: UIViewController {
         rect.layer.borderColor = CGColor(red: 42/255, green: 43/255, blue: 42/255, alpha: 1)
         self.view.addSubview(rect)
 
-        // 日本國旗中心紅圓
+        // 日本國旗中心紅圓，just like setupJapan() or something
 //        var circle = UIView(frame: CGRect(x: 0,
 //                                          y: 0,
 //                                          width: 250,
@@ -83,9 +85,9 @@ class ViewController: UIViewController {
 //        circle.layer.cornerRadius = 125
 //        rect.addSubview(circle)
 
-        addAdd()
+        setupGeorgia()
 
-        func addAdd() {
+        func setupGeorgia() {
             var factor = CGRect(x: 0, y: 0, width: 40, height: 250)
             let redBack1 = UIView(frame: factor)
             redBack1.center = CGPoint(x: rect.bounds.width/2, y: rect.bounds.height/2)
@@ -135,7 +137,7 @@ class ViewController: UIViewController {
         return rect
     }
     
-    private func setupView() {
+    private func setupGradientBorder() {
         let size = UIScreen.main.bounds.size
         var leftView = UIView(frame: CGRect(x: 0,
                                             y: 0,
